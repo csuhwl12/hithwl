@@ -1,0 +1,34 @@
+.progress-Container {
+    width: 100%;
+    height: 100%;
+    padding: 0em 0;
+    background: linear-gradient(to right, #2c3b4e, #4a688a, #2c3b4e);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(to right, #c6372a, #8a814a, rgba(0, 255, 34, 0.86));
+    padding: 0.5%;
+    overflow: visible;
+    border-radius: 1%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #d8d411;
+    margin-top: 0px;
+}
+
+.progress-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.71);
+    font-size: 1rem;
+    /* 添加以下属性确保文字始终可见 */
+    z-index: 1;
+    pointer-events: none;
+}

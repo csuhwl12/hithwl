@@ -1,0 +1,207 @@
+html{
+    color:white;
+    overflow: hidden;
+}
+body{
+    margin:0;
+    padding:0;
+    background-size: cover;
+    background-position: center;
+    background-image:url("./img/backGroundDarkBlue.png");
+}
+/*日期属性*/
+/*********************/
+.time-container{
+    top: 0%;
+    margin-left: auto;
+    width:9%;
+    height:5%;
+    right:1%;
+    text-align:right;
+    font-size:0.8rem;
+    color:yellowgreen;
+    font-weight:bold;
+
+}
+/*logo属性*/
+/*********************/
+#logo{
+
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top:1%;
+    left:3%;
+    width:9%;
+    height:6%;
+}
+#logo img{
+    width:100%;
+    height:100%
+}
+
+.border_show{
+    border:3px solid #000;
+    animation: blink-border 2s infinite alternate;
+}
+@keyframes blink-border {
+    0% {
+        border-color: #fffd02;
+    }
+    50% {
+        border-color: rgba(0, 255, 34, 0.86);
+    }
+    100% {
+        border-color: rgba(255, 255, 255, 0.71);
+    }
+}
+#wholeTitle{
+    top:5%;
+    margin: 0 auto;
+    color: white;
+    text-align:center;
+    font-size:2.0rem;
+    width: 24%;
+    font-weight:bold;
+    z-index: 30;
+
+}
+
+#workStationInfo{
+    position: absolute;
+    top: 10%;
+    left: 1%;
+    width: 18%;
+    height: 92%;
+
+}
+#workStationInfoTitle{
+    color: white;
+    text-align: center;
+    margin:0;
+}
+
+#productionProcess{
+    position: absolute;
+    top: 8%;
+    right: 1%;
+    width: 20%;
+    height: 43%;
+}
+
+#workStationUsage{
+    position: absolute;
+    top: 56%;
+    right: 1%;
+    width: 20%;
+    height: 44%;
+}
+
+#wholeFactoryBackGround{
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    width: 60%;
+    height: 87%;
+}
+/*工位信息表格设置*/
+/**********************************************/
+#workStationInfoTable{
+    border-collapse: collapse;
+    width: 100%;
+
+}
+#workStationInfoTable th{
+    border-bottom: 3px solid rgba(255, 255, 255, 0.41);
+    color: #fff200;
+    height:70px;
+    font-size: 110%;
+}
+#workStationInfoTable td{
+    height: 2.05rem;
+}
+
+#workStationInfoTable tr:nth-child(n+2):nth-child(-n+5){
+    background-color: rgba(12, 22, 234, 0.34);
+}
+#workStationInfoTable tr:nth-child(n+6):nth-child(-n+7){
+    background-color: rgba(21, 80, 152, 0.42);
+}
+#workStationInfoTable tr:nth-child(n+8):nth-child(-n+11){
+    background-color: rgba(12, 22, 234, 0.34);
+}
+#workStationInfoTable tr:nth-child(12){
+    background-color: rgba(21, 80, 152, 0.42);
+}
+#workStationInfoTable tr:nth-child(13){
+    background-color: rgba(12, 22, 234, 0.34);
+}
+#workStationInfoTable tr:nth-child(14){
+    background-color: rgba(21, 80, 152, 0.42);
+}
+#workStationInfoTable tr:nth-child(n+15):nth-child(-n+17){
+    background-color: rgba(12, 22, 234, 0.34);
+}
+#workStationInfoTable tr:nth-child(18){
+    background-color: rgba(21, 80, 152, 0.42);
+}
+#workStationInfoTable tr:nth-child(19){
+    background-color: rgba(12, 22, 234, 0.34);
+}
+#workStationInfoTable tr:nth-child(20){
+    background-color: rgba(21, 80, 152, 0.42);
+}
+#workStationInfoTable tr:nth-child(n+21):nth-child(-n+22){
+    background-color: rgba(12, 22, 234, 0.34)
+;
+}
+.workStationInfo_FirstColumn{
+    text-align: center;
+    width: 13%;
+    font-size:1.0rem;
+    height:1.9rem;
+}
+.workStationInfo_SecondColumn{
+    text-align: center;
+    width: 20%;
+
+    font-size:1.0rem;
+}
+.workStationInfo_ThirdColumn{
+    text-align: center;
+    width: 37%;
+    font-size:1.0rem;
+}
+.workStationInfo_FourthColumn{
+    text-align: center;
+    width: 30%;
+    font-size:1.0rem;
+}
+/*工位信息表格到此结束*/
+/*************************************/
+/*在制型号及进度一览*/
+
+
+
+#highLight{
+    position:absolute;
+    left:1%;
+    top:38.5rem;
+    width:17.7%;
+    height:2.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /********************************/

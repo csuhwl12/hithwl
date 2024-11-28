@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卫星产线总看板</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Process.css">
+    <link rel="stylesheet" href="workStationShowInfo.css">
+    <link rel="stylesheet" href="dingweiKuosan.css">
+    <link rel="stylesheet" href="workStationLoad.css">
+    <link rel="stylesheet" href="jinDuTiao.css">
+    <script src="echarts.min.js"></script>
+
+</head>
+<body>
+<div id="logo">
+    <img src="./img/logo.png" >
+</div>
+    <div id="wholeTitle">南通卫星工厂生产总看板</div>
+    <!--页面布局设计>
+    <!右上角区域倒计时-->
+    <div class="time-container">
+        <div class="date-row"></div>
+        <div class="time-row"></div>
+    </div>
+    <div id="highLight" class="border_show">
+
+    </div>
+
+
+
+    <div id="workStationInfo">
+        <!--工位信息标题-->
+        <div>
+            <h2 id="workStationInfoTitle">卫星产线工位信息总览</h2>
+        </div>
+        <table id="workStationInfoTable">
+            <tr>
+                <th class="workStationInfo_FirstColumn">序号</th>
+                <th class="workStationInfo_SecondColumn">工位号</th>
+                <th class="workStationInfo_ThirdColumn">岛位名称</th>
+                <th class="workStationInfo_FourthColumn">在制型号</th>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">1</td>
+                <td class="workStationInfo_SecondColumn">T1Z01</td>
+                <td rowspan="4" class="workStationInfo_ThirdColumn">单板总装</td>
+                <td class="workStationInfo_FourthColumn">XW05</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">2</td>
+                <td class="workStationInfo_SecondColumn">T1Z02</td>
+
+                <td class="workStationInfo_FourthColumn">XW06</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">3</td>
+                <td class="workStationInfo_SecondColumn">T1Z03</td>
+
+                <td class="workStationInfo_FourthColumn">XW05</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">4</td>
+                <td class="workStationInfo_SecondColumn">T1Z04</td>
+
+                <td class="workStationInfo_FourthColumn">无</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">5</td>
+                <td class="workStationInfo_SecondColumn">T1Z05</td>
+                <td rowspan="2" class="workStationInfo_ThirdColumn">整星集成</td>
+                <td class="workStationInfo_FourthColumn">XW07</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">6</td>
+                <td class="workStationInfo_SecondColumn">T1Z06</td>
+
+                <td class="workStationInfo_FourthColumn">XY01</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">7</td>
+                <td class="workStationInfo_SecondColumn">T1Z08</td>
+                <td rowspan="4" class="workStationInfo_ThirdColumn">整星装配测试</td>
+                <td class="workStationInfo_FourthColumn">无</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">8</td>
+                <td class="workStationInfo_SecondColumn">T1Z09</td>
+
+                <td class="workStationInfo_FourthColumn">XW04</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">9</td>
+                <td class="workStationInfo_SecondColumn">T1T01</td>
+
+                <td class="workStationInfo_FourthColumn">XW05</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">10</td>
+                <td class="workStationInfo_SecondColumn">T1T02</td>
+
+                <td class="workStationInfo_FourthColumn">XW03</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">11</td>
+                <td class="workStationInfo_SecondColumn">T1Z10</td>
+                <td class="workStationInfo_ThirdColumn">卫星精度测试</td>
+                <td class="workStationInfo_FourthColumn">XW01</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">12</td>
+                <td class="workStationInfo_SecondColumn">T1Z07</td>
+                <td class="workStationInfo_ThirdColumn">质量特性测试</td>
+                <td class="workStationInfo_FourthColumn">机动通信网</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">13</td>
+                <td class="workStationInfo_SecondColumn">T1Z11</td>
+                <td class="workStationInfo_ThirdColumn">卫星检漏测试</td>
+                <td class="workStationInfo_FourthColumn">无</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">14</td>
+                <td class="workStationInfo_SecondColumn">T1J01</td>
+                <td rowspan="3" class="workStationInfo_ThirdColumn">太阳翼集成测试</td>
+                <td class="workStationInfo_FourthColumn">无</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">15</td>
+                <td class="workStationInfo_SecondColumn">T1J02</td>
+
+                <td class="workStationInfo_FourthColumn">XY01</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">16</td>
+                <td class="workStationInfo_SecondColumn">T1J03</td>
+
+                <td class="workStationInfo_FourthColumn">无</td>
+            </tr>
+
+            <tr>
+                <td class="workStationInfo_FirstColumn">17</td>
+                <td class="workStationInfo_SecondColumn">T1S03</td>
+                <td class="workStationInfo_ThirdColumn">力学试验</td>
+                <td class="workStationInfo_FourthColumn">机动通信网</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">18</td>
+                <td class="workStationInfo_SecondColumn">T1S02</td>
+                <td class="workStationInfo_ThirdColumn">真空热试验</td>
+                <td class="workStationInfo_FourthColumn">无</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">19</td>
+                <td class="workStationInfo_SecondColumn">T1S01</td>
+                <td class="workStationInfo_ThirdColumn">EMC试验</td>
+                <td class="workStationInfo_FourthColumn">无</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">20</td>
+                <td class="workStationInfo_SecondColumn">T1T03</td>
+                <td  rowspan="2" class="workStationInfo_ThirdColumn">出厂前综合测试</td>
+                <td class="workStationInfo_FourthColumn">XY02</td>
+            </tr>
+            <tr>
+                <td class="workStationInfo_FirstColumn">21</td>
+                <td class="workStationInfo_SecondColumn">T1T04</td>
+
+                <td class="workStationInfo_FourthColumn">XY02</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <!--右上角型号进度及倒计时信息-->
+    <div id="productionProcess">
+        <h2 class="tableTitle">卫星AIT进度总览</h2>
+        <div>
+            <table id="processJinDu">
+                <tr>
+                    <th class="processFirstColumn">型号代号</th>
+                    <th class="processSecondColumn">型号名称</th>
+                    <th class="processThirdColumn">当前阶段</th>
+                    <th class="processFourthColumn">进度</th>
+                    <th class="processFifthColumn">倒计时</th>
+                </tr>
+                <tr>
+                    <td class="processFirstColumn">XW01</td>
+                    <td class="processSecondColumn">LX04</td>
+                    <td class="processThirdColumn">完工</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar progress-bar-info progress-bar-striped active"  id="progressBar1"></div>
+                            <div class="progress-text" id="progressText1"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" id="countdown1"></td>
+                </tr>
+                <tr>
+                    <td class="processFirstColumn">XW02</td>
+                    <td class="processSecondColumn">LX04</td>
+                    <td class="processThirdColumn">完工</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar progress-bar-info progress-bar-striped active" id="progressBar2"></div>
+                            <div class="progress-text" id="progressText2"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" id="countdown2"></td>
+                </tr>
+                <tr>
+                    <td class="processFirstColumn">XW03</td>
+                    <td class="processSecondColumn">LX04</td>
+                    <td class="processThirdColumn">A2电测</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar" id="progressBar3"></div>
+                            <div class="progress-text" id="progressText3"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" id="countdown3"></td>
+                </tr>
+                <tr>
+                    <td class="processFirstColumn">XW04</td>
+                    <td class="processSecondColumn">LX04</td>
+                    <td class="processThirdColumn">A2电测</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar" id="progressBar4"></div>
+                            <div class="progress-text" id="progressText4"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" id="countdown4"></td>
+                </tr>
+                <tr>
+                    <td class="processFirstColumn">XW05</td>
+                    <td class="processSecondColumn">LX04</td>
+                    <td class="processThirdColumn">A1电测</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar" id="progressBar5"></div>
+                            <div class="progress-text" id="progressText5"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" id="countdown5"></td>
+                </tr>
+                <tr>
+                    <td class="processFirstColumn">XW06</td>
+                    <td class="processSecondColumn">LX04</td>
+                    <td class="processThirdColumn">单板总装</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar" id="progressBar6"></div>
+                            <div class="progress-text" id="progressText6"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" id="countdown6"></td>
+                </tr>
+
+                <tr>
+                    <td class="processFirstColumn">XW07</td>
+                    <td class="processSecondColumn">LX04</td>
+                    <td class="processThirdColumn">单板总装</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar" id="progressBar7"></div>
+                            <div class="progress-text" id="progressText7"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" id="countdown7"></td>
+                </tr>
+
+                <tr>
+                    <td class="processFirstColumn">XY01</td>
+                    <td class="processSecondColumn">LX06</td>
+                    <td class="processThirdColumn">太阳翼安装</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar" id="progressBar8"></div>
+                            <div class="progress-text" id="progressText8"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" id="countdown8"></td>
+                </tr>
+                <tr>
+                    <td class="processFirstColumn">XY02</td>
+                    <td class="processSecondColumn">LX06</td>
+                    <td class="processThirdColumn">出厂前电测</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar" id="progressBar9"></div>
+                            <div class="progress-text" id="progressText9"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" id="countdown9"></td>
+                </tr>
+                <tr>
+                    <td class="processFirstColumn">机动通信网</td>
+                    <td class="processSecondColumn">LX07</td>
+                    <td class="processThirdColumn">完工</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar" id="progressBar10"></div>
+                            <div class="progress-text" id="progressText10"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" >地面验证</td>
+                </tr>
+
+                <tr>
+                    <td class="processFirstColumn">手机直连</td>
+                    <td class="processSecondColumn">LX08</td>
+                    <td class="processThirdColumn">桌面联试</td>
+                    <td class="processFourthColumn">
+                        <div class="progress-Container">
+                            <div class="progress-bar" id="progressBar11"></div>
+                            <div class="progress-text" id="progressText11"></div>
+                        </div>
+                    </td>
+                    <td class="processFifthColumn" >地面验证</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+    <!--右下角型号工位占用率-->
+    <div id="workStationUsage">
+        <h2 class="workStationLoadTitle">卫星产线工位负荷总览</h2>
+        <table id="workStationLoad">
+            <tr>
+                <th class="workStationLoadFirstColumn">岛位名称</th>
+                <th class="workStationLoadSecondColumn">工位总数</th>
+                <th class="workStationLoadThirdColumn">占用率</th>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">单板总装</td>
+                <td class="workStationLoadSecondColumn">4</td>
+                <td class="workStationLoadThirdColumn">100%</td>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">整星集成</td>
+                <td class="workStationLoadSecondColumn">4</td>
+                <td class="workStationLoadThirdColumn">100%</td>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">整星装配测试</td>
+                <td class="workStationLoadSecondColumn">4</td>
+                <td class="workStationLoadThirdColumn">67%</td>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">卫星精度测试</td>
+                <td class="workStationLoadSecondColumn">1</td>
+                <td class="workStationLoadThirdColumn">100%</td>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">质量特性测试</td>
+                <td class="workStationLoadSecondColumn">1</td>
+                <td class="workStationLoadThirdColumn">100%</td>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">卫星检漏测试</td>
+                <td class="workStationLoadSecondColumn">1</td>
+                <td class="workStationLoadThirdColumn">100%</td>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">太阳翼集成测试</td>
+                <td class="workStationLoadSecondColumn">3</td>
+                <td class="workStationLoadThirdColumn">33%</td>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">力学试验</td>
+                <td class="workStationLoadSecondColumn">0</td>
+                <td class="workStationLoadThirdColumn">0%</td>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">真空热试验</td>
+                <td class="workStationLoadSecondColumn">0</td>
+                <td class="workStationLoadThirdColumn">0%</td>
+            </tr>
+            <tr>
+                <td class="workStationLoadFirstColumn">EMC试验</td>
+                <td class="workStationLoadSecondColumn">0</td>
+                <td class="workStationLoadThirdColumn">0%</td>
+            </tr>
+        </table>
+    </div>
+
+    <!--中间工位模型图片及信息跳动展示-->
+    <div id="workStationShowInfo">
+        <h3 id="turnInfoTitle">单板总装</h3>
+
+
+        <div id="dingWeiKuoSan">
+            <div class="marker"></div>
+            <span class="beacon"></span>
+        </div>
+    </div>
+
+<canvas id="wholeFactoryBackGround" width="2560" height="1440">
+</canvas>
+    <script src="dataAndTime.js"></script>
+    <script src="index.js"></script>
+    <script src="jinDuTiao.js"></script>
+</body>
+</html>
